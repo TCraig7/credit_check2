@@ -16,11 +16,11 @@ class CreditCheck
   end
 
   def separate_and_reverse_characters
-    @cc_number.to_i.digits
+    cc_number.to_i.digits
   end
 
   def double_every_other_number
-    @cc_number.map.with_index do |num, i|
+    converted.map.with_index do |num, i|
       if i.odd?
         num * 2
       else
