@@ -12,7 +12,7 @@ class CreditCheck
     nines = sum_greater_than_nine(doubled)
     sum = sum_numbers(nines)
     validity = valid_number?(sum)
-    validation_output(validity)
+    validation(validity)
   end
 
   def separate_and_reverse_characters(card_number)
@@ -51,7 +51,7 @@ class CreditCheck
     end
   end
 
-  def validation_output(card_number)
+  def validation(card_number)
     if card_number == true
       "The number #{@cc_number} is valid."
     else
