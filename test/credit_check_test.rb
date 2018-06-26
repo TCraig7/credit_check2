@@ -57,19 +57,17 @@ class CreditCheckTest < Minitest::Test
 
   def test_it_will_generate_valid_message
     credit_check = CreditCheck.new("4929735477250543")
-    card_validation = true
 
     expected = "The number 4929735477250543 is valid."
 
-    assert_equal expected, credit_check.validation_output(card_validation)
+    assert_equal expected, credit_check.validation_output("4929735477250543")
   end
 
   def test_it_will_generate_invalid_message
     credit_check = CreditCheck.new("5541801923795240")
-    card_validation = false
 
     expected = "The number 5541801923795240 is invalid."
 
-    assert_equal expected, credit_check.validation_output(card_validation)
+    assert_equal expected, credit_check.validation_output("5541801923795240")
   end
 end
