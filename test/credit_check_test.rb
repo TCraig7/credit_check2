@@ -34,23 +34,26 @@ class CreditCheckTest < Minitest::Test
     assert_equal expected, credit_check.sum_greater_than_nine(credit_card)
   end
   #
-  # def test_it_can_sum_numbers
-  #   credit_check = CreditCheck.new("4929735477250543")
+  def test_it_can_sum_numbers
+    credit_check = CreditCheck.new("4929735477250543")
+    credit_card = [3, 8, 5, 0, 5, 4, 7, 5, 4, 1, 3, 5, 9, 4, 9, 8]
+
+    assert_equal 80, credit_check.sum_numbers(credit_card)
+  end
   #
-  #   assert_equal 80, credit_check.sum_numbers
-  # end
+  def test_modulo_is_equal_to_zero_and_returns_true
+    credit_check = CreditCheck.new("4929735477250543")
+    credit_card = 80
+
+    assert credit_check.valid_number?(credit_card)
+  end
   #
-  # def test_modulo_is_equal_to_zero_and_returns_true
-  #   credit_check = CreditCheck.new("4929735477250543")
-  #
-  #   assert credit_check.valid_number?
-  # end
-  #
-  # def test_modulo_is_not_equal_to_zero_and_returns_false
-  #   credit_check = CreditCheck.new("5541801923795240")
-  #
-  #   refute credit_check.valid_number?
-  # end
+  def test_modulo_is_not_equal_to_zero_and_returns_false
+    credit_check = CreditCheck.new("5541801923795240")
+    credit_card = 81
+
+    refute credit_check.valid_number?(credit_card)
+  end
   #
   # def test_it_will_generate_valid_message
   #   credit_check = CreditCheck.new("4929735477250543")

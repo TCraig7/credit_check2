@@ -10,7 +10,7 @@ class CreditCheck
     converted_number = separate_and_reverse_characters(cc_number)
     doubled = double_every_other_number(converted_number)
     nines = sum_greater_than_nine(doubled)
-    sum = nines.sum
+    sum = nines(sum_numbers)
     validity = valid?(sum)
     generate_message(validity)
   end
@@ -36,6 +36,18 @@ class CreditCheck
       else
         num
       end
+    end
+  end
+
+  def sum_numbers(cc_number)
+    cc_number.sum
+  end
+
+  def valid_number?(cc_number)
+    if cc_number % 10 == 0
+      true
+    else
+      false
     end
   end
 end
