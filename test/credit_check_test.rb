@@ -43,16 +43,14 @@ class CreditCheckTest < Minitest::Test
   #
   def test_modulo_is_equal_to_zero_and_returns_true
     credit_check = CreditCheck.new("4929735477250543")
-    credit_card = 80
 
-    assert credit_check.valid_number?(credit_card)
+    assert credit_check.valid_number?("4929735477250543")
   end
 
   def test_modulo_is_not_equal_to_zero_and_returns_false
     credit_check = CreditCheck.new("5541801923795240")
-    credit_card = 81
 
-    refute credit_check.valid_number?(credit_card)
+    refute credit_check.valid_number?("5541801923795240")
   end
 
   def test_it_will_generate_valid_message

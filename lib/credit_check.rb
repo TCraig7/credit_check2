@@ -6,13 +6,21 @@ class CreditCheck
     @cc_number = cc_number
   end
 
+  def valid_number?(card_number)
+    converted_number = separate_and_reverse_characters(cc_number)
+    doubled = double_every_other_number(converted_number)
+    nines = sum_greater_than_nine(doubled)
+    sum = sum_numbers(nines)
+    validity(sum)
+  end
+
   def validation_output(cc_number)
     converted_number = separate_and_reverse_characters(cc_number)
     doubled = double_every_other_number(converted_number)
     nines = sum_greater_than_nine(doubled)
     sum = sum_numbers(nines)
-    validity = valid_number?(sum)
-    validation(validity)
+    output = validity(sum)
+    validation(output)
   end
 
   def separate_and_reverse_characters(card_number)
@@ -43,7 +51,7 @@ class CreditCheck
     card_number.sum
   end
 
-  def valid_number?(card_number)
+  def validity(card_number)
     if card_number % 10 == 0
       true
     else
