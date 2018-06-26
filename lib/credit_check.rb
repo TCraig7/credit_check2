@@ -7,7 +7,7 @@ class CreditCheck
   end
 
   def validate(cc_number)
-    converted_number = separate_characters(cc_number)
+    converted_number = separate_and_reverse_characters(cc_number)
     doubled = double_every_other_number(converted_number)
     nines = sum_greater_than_nine(doubled)
     sum = nines.sum
@@ -15,12 +15,12 @@ class CreditCheck
     generate_message(validity)
   end
 
-  def separate_and_reverse_characters
+  def separate_and_reverse_characters(cc_number)
     cc_number.to_i.digits
   end
 
-  def double_every_other_number
-    converted.map.with_index do |num, i|
+  def double_every_other_number(cc_number)
+    cc_number.map.with_index do |num, i|
       if i.odd?
         num * 2
       else
@@ -29,4 +29,13 @@ class CreditCheck
     end
   end
 
+  def sum_greater_than_nine(cc_number)
+    cc_number.map do |num|
+      if num > 9
+        num - 9
+      else
+        num
+      end
+    end
+  end
 end
