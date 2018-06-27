@@ -40,7 +40,7 @@ class CreditCheckTest < Minitest::Test
 
     assert_equal 80, credit_check.sum_numbers(credit_card)
   end
-  #
+
   def test_modulo_is_equal_to_zero_and_returns_true
     credit_check = CreditCheck.new("4929735477250543")
 
@@ -67,5 +67,21 @@ class CreditCheckTest < Minitest::Test
     expected = "The number 5541801923795240 is invalid."
 
     assert_equal expected, credit_check.validation_output("5541801923795240")
+  end
+
+  def test_it_validates_amex
+    credit_check = CreditCheck.new("342804633855673")
+
+    expected = "The number 342804633855673 is valid."
+
+    assert_equal expected, credit_check.validation_output("342804633855673")
+  end
+
+  def test_it_validates_invalid_amex
+    credit_check = CreditCheck.new("342801633855673")
+
+    expected = "The number 342801633855673 is invalid."
+
+    assert_equal expected, credit_check.validation_output("342801633855673")
   end
 end

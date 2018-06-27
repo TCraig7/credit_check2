@@ -1,5 +1,5 @@
 class CreditCheck
-
+  #
   attr_reader   :cc_number
 
   def initialize(cc_number)
@@ -14,7 +14,7 @@ class CreditCheck
     validity(sum)
   end
 
-  def validation_output(cc_number)
+  def validation_output(card_number)
     converted_number = separate_and_reverse_characters(cc_number)
     doubled = double_every_other_number(converted_number)
     nines = sum_greater_than_nine(doubled)
