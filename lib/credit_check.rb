@@ -13,6 +13,13 @@ class CreditCheck
     validation(valid, card_number)
   end
 
+  def calculate_check_sum_digit(card_number)
+    converted_number = separate_and_reverse_characters(card_number)
+    doubled = double_every_other_number(converted_number)
+    nines = sum_greater_than_nine(doubled)
+    check_sum_digit(nines)
+  end
+
   def separate_and_reverse_characters(card_number)
     card_number.to_i.digits
   end
@@ -39,6 +46,17 @@ class CreditCheck
       end
     end
     doubles
+  end
+
+  def check_sum_digit(nines)
+    nines.shift
+    total = nines.sum
+    remainder = total % 10
+    if remainder == 0
+      0
+    else
+      10 - remainder
+    end
   end
 
   def sum_numbers(nines)

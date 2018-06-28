@@ -81,6 +81,15 @@ class CreditCheckTest < Minitest::Test
     assert_equal expected, credit_check.validation_output(5541801923795240)
   end
 
+  def test_it_can_calculate_check_sum_digit
+    credit_check = CreditCheck.new
+    #the account number below is a valid credit card number without the check sum number
+    account_number = 4929735477250543
+
+    assert_equal 3, credit_check.calculate_check_sum_digit(account_number)
+
+  end
+
   def test_it_validates_amex
     credit_check = CreditCheck.new
 
