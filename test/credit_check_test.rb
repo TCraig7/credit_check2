@@ -20,25 +20,25 @@ class CreditCheckTest < Minitest::Test
 
   def test_it_can_double_every_other_number
     credit_check = CreditCheck.new
-    credit_card = [3, 4, 5, 0, 5, 2, 7, 7, 4, 5, 3, 7, 9, 2, 9, 4]
+    converted_number = [3, 4, 5, 0, 5, 2, 7, 7, 4, 5, 3, 7, 9, 2, 9, 4]
 
     expected = [3, 8, 5, 0, 5, 4, 7, 14, 4, 10, 3, 14, 9, 4, 9, 8]
-    assert_equal expected, credit_check.double_every_other_number(credit_card)
+    assert_equal expected, credit_check.double_every_other_number(converted_number)
   end
 
   def test_it_can_sum_digits_over_nine
     credit_check = CreditCheck.new
-    credit_card = [3, 8, 5, 0, 5, 4, 7, 14, 4, 10, 3, 14, 9, 4, 9, 8]
+    doubled = [3, 8, 5, 0, 5, 4, 7, 14, 4, 10, 3, 14, 9, 4, 9, 8]
 
     expected = [3, 8, 5, 0, 5, 4, 7, 5, 4, 1, 3, 5, 9, 4, 9, 8]
-    assert_equal expected, credit_check.sum_greater_than_nine(credit_card)
+    assert_equal expected, credit_check.sum_greater_than_nine(doubled)
   end
 
   def test_it_can_sum_numbers
     credit_check = CreditCheck.new
-    credit_card = [3, 8, 5, 0, 5, 4, 7, 5, 4, 1, 3, 5, 9, 4, 9, 8]
+    nines = [3, 8, 5, 0, 5, 4, 7, 5, 4, 1, 3, 5, 9, 4, 9, 8]
 
-    assert_equal 80, credit_check.sum_numbers(credit_card)
+    assert_equal 80, credit_check.sum_numbers(nines)
   end
 
   def test_modulo_is_equal_to_zero_and_returns_true

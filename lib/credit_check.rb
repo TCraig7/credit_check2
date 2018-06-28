@@ -18,23 +18,27 @@ class CreditCheck
   end
 
   def double_every_other_number(converted_number)
-    converted_number.map.with_index do |num, i|
+    converted = []
+    converted_number.each.with_index do |num, i|
       if i.odd?
-        num * 2
+        converted << num * 2
       else
-        num
+        converted << num
       end
     end
+    converted
   end
 
   def sum_greater_than_nine(doubled)
-    doubled.map do |num|
+    doubles = []
+    doubled.each do |num|
       if num > 9
-        num - 9
+        doubles << num - 9
       else
-        num
+        doubles << num
       end
     end
+    doubles
   end
 
   def sum_numbers(nines)
