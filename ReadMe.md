@@ -1,54 +1,63 @@
-## Iteration 1 - The Luhn Algorithm
-Start with this template and save it as ```credit_check.rb``` in your ```lib``` directory:
+# Questions
 
-```
-card_number = "4929735477250543"
+1. What are you proud of? I'm proud of the fact that I was able to get the algorithm figured out on the first night the project was assigned, and so I was able to go more in depth into making the runner methods and refactoring. I learned a lot on this project which was really cool.
+1. What do you need to improve? My runner methods and naming. I sometimes wasn't clear with my variable names which ended up confusing me and making my runner methods confusing.
+1. What questions do you still have? Nothing right now.
 
-# Your Luhn Algorithm Here
+# Rubric
 
-# Output
-## If it is valid, print "The number is valid!"
-## If it is invalid, print "The number is invalid!"
-```
+## Functionality - 4
 
-**Sample Data**
+Notes: I need to work on naming variable more clearly.
 
-If helpful, you can use the following sample data:
+- [X] Student completes through Iteration 3
 
-- Valid: 5541808923795240, 4024007136512380, 6011797668867828
-- Invalid: 5541801923795240, 4024007106512380, 6011797668868728
+## Mechanics - 4
 
-## Iteration 2 - Github and Classes
+Notes:
 
-- Create a repository on Github and push your algorithm to it. From here on, all your code should be hosted on Github.
+The student(s):
 
-- Create a class that responds to the following interaction pattern:
+- [X] appropriately uses Strings, Integers, Floats, Ranges, Symbols, Nils, Arrays, and Hashes
+- [X] implements best-choice enumerable methods to iterate over collections
+- [X] uses boolean expressions and flow control structures to logically manage a program's flow
+- [X] uses methods, arguments, and return values to break code into logical components
+- [X] creates Classes that utilize instance variables, attribute accessors, and instance methods
 
-```
-credit_check = CreditCheck.new
-=> #<CreditCheck:0x00007fe82d2a8a38>
-credit_check.valid_number?(5541808923795240)
-=> true
-credit_check.valid_number?(5541801923795240)
-=> false
-credit_check.validation_output(5541808923795240)
-=> "The number 5541808923795240 is valid"
-credit_check.validation_output(5541801923795240)
-=> "The number 5541801923795240 is invalid"
-```
+## Design - 4
 
-**note on interaction patterns:** this means that you should be able to open a pry session, require the file with your class, for instance ```require './credit_check',``` and type in the lines of code above exactly and get the same output in your pry session.
+Notes:
 
-## Iteration 3 - Branching and Minitest
-- Create a branch in your local git repo called ```testing```
+The student(s):
 
-- Create a Minitest test that accurately covers the expected behavior of your CreditCheck class
+- [X] adheres to the Single Responsibility and DRY principles
+- [X] creates Objects and Classes that appropriately encompass state and behavior
+- [X] uses instance and local variables appropriately
+- [X] writes readable code with the following characteristics:
+    * Variable and method names are self explanatory
+    * Methods are under 7 lines
+    * Lines of code are under 80 characters
+    * Project directory structure adheres to convention
+    * A linter reports less than 5 errors
 
-- Push the branch up to your Github repository and merge the branch using a Pull Request
+## Testing - 4
 
-## Iteration 4 - Extensions
-- Create a command line interface that allows the user to validate a number
+Notes: Wrote test file before starting the code
 
-- Add functionality to calculate the check sum digit.
+The student(s):
 
-- Can you make it work for American Express numbers? 342804633855673 is valid but 342801633855673 is invalid
+- [X] writes Minitest tests that describe the expected behavior of a program according to technical specifications
+- [X] names and orders tests so that a test file reads like documentation
+- [X] writes Minitest assertions that accurately test a piece of functionality
+- [X] writes a test before writing code that implements the behavior to make that test pass
+- [X] writes both integration and unit tests
+
+## Version Control - 2
+
+Notes: Only made one branch and broke git when I did :(
+
+The student(s):
+
+- [X] hosts their code on the master branch of their remote repository
+- [X] makes commits in small chunks of functionality
+- [X] submits and merges Pull Requests using the Github interface
